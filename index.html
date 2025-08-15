@@ -1,0 +1,1373 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>创意传媒 - 专业广告传媒公司</title>
+    <meta name="description" content="专业的品牌全案广告传媒公司，致力于为客户提供创意策略、品牌设计、数字营销等全方位服务，助力品牌成长与发展。">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        .font-serif { font-family: 'Playfair Display', serif; }
+        .font-sans { font-family: 'Inter', sans-serif; }
+        
+        /* 动画效果 */
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        .animate-float {
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        /* 页面切换动画 */
+        .page-transition {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.3s ease-in-out;
+        }
+        
+        .page-active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* 隐藏非活动页面 */
+        .page:not(.active) {
+            display: none;
+        }
+        
+        .page.active {
+            display: block;
+        }
+        
+        /* 自定义滚动条 */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: #1f2937;
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: #6366f1;
+            border-radius: 4px;
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+            background: #4f46e5;
+        }
+    </style>
+</head>
+<body class="bg-gray-950 text-white font-sans">
+    <!-- 导航栏 -->
+    <nav class="fixed top-0 w-full z-50 bg-gray-950/70 backdrop-blur-xl border-b border-gray-800/30">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <div class="text-2xl font-bold bg-gradient-to-r from-violet-400 via-fuchsia-400 to-cyan-400 bg-clip-text text-transparent font-serif cursor-pointer" onclick="showPage('home')">
+                        创意传媒
+                    </div>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <button onclick="showPage('services')" class="text-gray-200 hover:text-white transition-colors bg-transparent border-none cursor-pointer">
+                        核心服务
+                    </button>
+                    <button onclick="showPage('cases')" class="text-gray-200 hover:text-white transition-colors bg-transparent border-none cursor-pointer">
+                        精选案例
+                    </button>
+                    <button onclick="showPage('team')" class="text-gray-200 hover:text-white transition-colors bg-transparent border-none cursor-pointer">
+                        专业团队
+                    </button>
+                    <button onclick="showPage('about')" class="text-gray-200 hover:text-white transition-colors bg-transparent border-none cursor-pointer">
+                        关于我们
+                    </button>
+                    <button onclick="showPage('contact')" class="text-gray-200 hover:text-white transition-colors bg-transparent border-none cursor-pointer">
+                        联系我们
+                    </button>
+                </div>
+                <button class="border-2 border-fuchsia-400 text-fuchsia-400 hover:bg-fuchsia-400 hover:text-white bg-transparent transition-all duration-300 px-4 py-2 rounded-md" onclick="showPage('contact')">
+                    免费咨询
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 首页 -->
+    <div id="home" class="page active">
+        <div class="min-h-screen bg-gray-950 relative pt-16">
+            <!-- 背景装饰 -->
+            <div class="fixed inset-0 overflow-hidden pointer-events-none">
+                <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-violet-500/8 rounded-full blur-3xl"></div>
+                <div class="absolute top-3/4 right-1/4 w-80 h-80 bg-cyan-500/6 rounded-full blur-3xl"></div>
+                <div class="absolute bottom-1/4 left-1/3 w-72 h-72 bg-fuchsia-500/4 rounded-full blur-3xl"></div>
+                
+                <!-- 小几何体装饰 -->
+                <div class="absolute top-20 left-10 w-3 h-3 bg-violet-400/30 rotate-45 animate-pulse"></div>
+                <div class="absolute top-32 right-20 w-2 h-2 bg-cyan-400/40 rounded-full animate-bounce" style="animation-delay: 0.5s;"></div>
+                <div class="absolute top-1/3 left-1/2 w-4 h-4 bg-fuchsia-400/25 rotate-12 animate-pulse" style="animation-delay: 1s;"></div>
+                <div class="absolute bottom-1/3 right-1/3 w-3 h-3 bg-violet-400/35 rounded-full animate-bounce" style="animation-delay: 1.5s;"></div>
+                <div class="absolute bottom-20 left-1/4 w-2 h-2 bg-cyan-400/30 rotate-45 animate-pulse" style="animation-delay: 2s;"></div>
+            </div>
+
+            <!-- 英雄区域 -->
+            <section class="relative bg-gradient-to-br from-gray-950 via-gray-900 to-gray-950 py-32 lg:py-48 min-h-[80vh] flex items-center overflow-hidden">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                    <div class="text-center">
+                        <div class="text-sm text-violet-300 mb-4 tracking-wider uppercase">边角创意—品牌全案服务商</div>
+                        <h1 class="text-5xl md:text-7xl font-bold mb-6 font-serif">
+                            <span class="bg-gradient-to-r from-violet-400 via-fuchsia-400 to-cyan-400 bg-clip-text text-transparent">
+                                创意无界，品牌有力
+                            </span>
+                        </h1>
+                        <p class="text-xl text-gray-200 mb-12 max-w-3xl mx-auto leading-relaxed">
+                            专业的品牌全案广告传媒公司，致力于为客户提供创意策略、品牌设计、数字营销等全方位服务，助力品牌成长与发展
+                        </p>
+                        <div class="flex flex-col sm:flex-row gap-4 justify-center mb-16">
+                            <button onclick="showPage('about')" class="border-2 border-fuchsia-400 text-fuchsia-400 hover:bg-fuchsia-400 hover:text-white bg-transparent transition-all duration-300 px-8 py-4 text-lg rounded-md">
+                                关于我们
+                            </button>
+                            <button onclick="showPage('contact')" class="border-2 border-violet-400 text-violet-400 hover:bg-violet-400 hover:text-white px-8 py-4 text-lg bg-transparent transition-all duration-300 rounded-md">
+                                合作流程
+                            </button>
+                        </div>
+
+                        <div class="bg-gray-950/30 backdrop-blur-sm border border-gray-800/30 rounded-2xl p-8 max-w-4xl mx-auto">
+                            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                                <div>
+                                    <div class="text-3xl md:text-4xl font-bold text-cyan-400 mb-2">200+</div>
+                                    <div class="text-sm md:text-base text-gray-300">成功案例</div>
+                                </div>
+                                <div>
+                                    <div class="text-3xl md:text-4xl font-bold text-violet-400 mb-2">50+</div>
+                                    <div class="text-sm md:text-base text-gray-300">合作伙伴</div>
+                                </div>
+                                <div>
+                                    <div class="text-3xl md:text-4xl font-bold text-fuchsia-400 mb-2">8年</div>
+                                    <div class="text-sm md:text-base text-gray-300">行业经验</div>
+                                </div>
+                                <div>
+                                    <div class="text-3xl md:text-4xl font-bold text-orange-400 mb-2">98%</div>
+                                    <div class="text-sm md:text-base text-gray-300">客户满意度</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 核心服务预览 -->
+            <section class="py-16 bg-gray-950/50 relative">
+                <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="text-center mb-12">
+                        <h2 class="text-3xl md:text-4xl font-bold text-white mb-4 font-serif">核心服务</h2>
+                        <p class="text-lg text-gray-300">从品牌策略到创意执行，我们提供全链路的专业服务</p>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                        <div class="group hover:shadow-xl transition-all duration-300 border border-gray-800/50 overflow-hidden relative h-48 bg-gray-900/30 cursor-pointer rounded-lg" onclick="showPage('services')">
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-700/60 to-slate-500/30"></div>
+                            <div class="relative p-4 h-full flex flex-col justify-between text-white">
+                                <div class="w-10 h-10 bg-white/20 backdrop-blur-sm rounded-lg flex items-center justify-center mb-2">
+                                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                                        <path d="M9 12l2 2 4-4m6 2a9 9 0 11-16 0 9 9 0 0116 0z"/>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h3 class="text-lg font-semibold mb-1">品牌策略</h3>
+                                    <p class="text-xs opacity-90">深度洞察市场，制定精准的品牌定位</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="group hover:shadow-xl transition-all duration-300 border border-gray-800/50 overflow-hidden relative h-48 bg-gray-900/30 cursor-pointer rounded-lg" onclick="showPage('services')">
+                            <div class="absolute inset-0 bg-gradient-to-t from-violet-900/90 via-violet-700/60 to-violet-500/30"></div>
+                            <div class="relative p-4 h-full flex flex-col justify-between text-white">
+                                <div class="w-10 h-10 bg-white/20 backdrop-blur-sm rounded-lg flex items-center justify-center mb-2">
+                                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                                        <path d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z"/>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h3 class="text-lg font-semibold mb-1">视觉设计</h3>
+                                    <p class="text-xs opacity-90">创造独特的视觉识别系统</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="group hover:shadow-xl transition-all duration-300 border border-gray-800/50 overflow-hidden relative h-48 bg-gray-900/30 cursor-pointer rounded-lg" onclick="showPage('services')">
+                            <div class="absolute inset-0 bg-gradient-to-t from-cyan-900/90 via-cyan-700/60 to-cyan-500/30"></div>
+                            <div class="relative p-4 h-full flex flex-col justify-between text-white">
+                                <div class="w-10 h-10 bg-white/20 backdrop-blur-sm rounded-lg flex items-center justify-center mb-2">
+                                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                                        <path d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z"/>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h3 class="text-lg font-semibold mb-1">数字营销</h3>
+                                    <p class="text-xs opacity-90">多渠道整合营销，精准触达</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="group hover:shadow-xl transition-all duration-300 border border-gray-800/50 overflow-hidden relative h-48 bg-gray-900/30 cursor-pointer rounded-lg" onclick="showPage('services')">
+                            <div class="absolute inset-0 bg-gradient-to-t from-fuchsia-900/90 via-fuchsia-700/60 to-fuchsia-500/30"></div>
+                            <div class="relative p-4 h-full flex flex-col justify-between text-white">
+                                <div class="w-10 h-10 bg-white/20 backdrop-blur-sm rounded-lg flex items-center justify-center mb-2">
+                                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                                        <path d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"/>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h3 class="text-lg font-semibold mb-1">活动策划</h3>
+                                    <p class="text-xs opacity-90">创意活动策划执行</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="text-center mt-12">
+                        <button onclick="showPage('services')" class="border-2 border-fuchsia-400 text-fuchsia-400 hover:bg-fuchsia-400 hover:text-white bg-transparent transition-all duration-300 px-8 py-3 rounded-md">
+                            查看所有服务
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 精选案例预览 -->
+            <section class="py-20 bg-gray-950 relative">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="text-center mb-16">
+                        <h2 class="text-3xl md:text-4xl font-bold text-white mb-4 font-serif">精选案例</h2>
+                        <p class="text-lg text-gray-300">每一个成功案例都是我们专业实力的体现</p>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        <div class="group overflow-hidden hover:shadow-xl transition-all duration-300 relative cursor-pointer rounded-lg" onclick="showCaseDetail('fashion-brand')">
+                            <div class="h-64 bg-gradient-to-br from-blue-600 to-purple-600 flex items-center justify-center">
+                                <div class="text-center text-white">
+                                    <div class="text-6xl mb-4">👗</div>
+                                    <h3 class="text-xl font-semibold">时尚品牌全案</h3>
+                                </div>
+                            </div>
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                        </div>
+
+                        <div class="group overflow-hidden hover:shadow-xl transition-all duration-300 relative cursor-pointer rounded-lg" onclick="showCaseDetail('tech-startup')">
+                            <div class="h-64 bg-gradient-to-br from-purple-600 to-pink-600 flex items-center justify-center">
+                                <div class="text-center text-white">
+                                    <div class="text-6xl mb-4">💻</div>
+                                    <h3 class="text-xl font-semibold">科技创新企业</h3>
+                                </div>
+                            </div>
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                        </div>
+
+                        <div class="group overflow-hidden hover:shadow-xl transition-all duration-300 relative cursor-pointer rounded-lg" onclick="showCaseDetail('restaurant-brand')">
+                            <div class="h-64 bg-gradient-to-br from-green-600 to-teal-600 flex items-center justify-center">
+                                <div class="text-center text-white">
+                                    <div class="text-6xl mb-4">🍽️</div>
+                                    <h3 class="text-xl font-semibold">高端餐饮品牌</h3>
+                                </div>
+                            </div>
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                        </div>
+                    </div>
+
+                    <div class="text-center mt-12">
+                        <button onclick="showPage('cases')" class="border-2 border-fuchsia-400 text-fuchsia-400 hover:bg-fuchsia-400 hover:text-white bg-transparent transition-all duration-300 px-8 py-3 rounded-md">
+                            查看更多案例
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 团队预览 -->
+            <section class="py-20 bg-gray-950/30 relative">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="text-center mb-16">
+                        <h2 class="text-3xl md:text-4xl font-bold text-white mb-4 font-serif">专业团队</h2>
+                        <p class="text-lg text-gray-300">汇聚行业顶尖人才，用专业和创意为品牌赋能</p>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        <div class="text-center group hover:shadow-lg transition-all duration-300 bg-gray-900/30 border border-gray-800/50 rounded-lg p-8">
+                            <div class="w-24 h-24 bg-gradient-to-br from-cyan-400 to-cyan-600 rounded-full mx-auto mb-6 flex items-center justify-center text-4xl">
+                                👨‍💼
+                            </div>
+                            <h3 class="text-xl font-semibold text-white mb-2">张明华</h3>
+                            <div class="mb-4 bg-cyan-500/20 text-cyan-300 border border-cyan-500/30 px-3 py-1 rounded-full text-sm inline-block">创意总监</div>
+                            <p class="text-gray-400">15年品牌策划经验，曾服务过多家知名企业，擅长品牌战略规划和创意执行</p>
+                        </div>
+
+                        <div class="text-center group hover:shadow-lg transition-all duration-300 bg-gray-900/30 border border-gray-800/50 rounded-lg p-8">
+                            <div class="w-24 h-24 bg-gradient-to-br from-violet-400 to-violet-600 rounded-full mx-auto mb-6 flex items-center justify-center text-4xl">
+                                👩‍🎨
+                            </div>
+                            <h3 class="text-xl font-semibold text-white mb-2">李雅静</h3>
+                            <div class="mb-4 bg-violet-500/20 text-violet-300 border border-violet-500/30 px-3 py-1 rounded-full text-sm inline-block">设计总监</div>
+                            <p class="text-gray-400">国际4A广告公司出身，在视觉传达和品牌设计领域有着丰富的实战经验</p>
+                        </div>
+
+                        <div class="text-center group hover:shadow-lg transition-all duration-300 bg-gray-900/30 border border-gray-800/50 rounded-lg p-8">
+                            <div class="w-24 h-24 bg-gradient-to-br from-fuchsia-400 to-fuchsia-600 rounded-full mx-auto mb-6 flex items-center justify-center text-4xl">
+                                👨‍💻
+                            </div>
+                            <h3 class="text-xl font-semibold text-white mb-2">王志远</h3>
+                            <div class="mb-4 bg-fuchsia-500/20 text-fuchsia-300 border border-fuchsia-500/30 px-3 py-1 rounded-full text-sm inline-block">营销总监</div>
+                            <p class="text-gray-400">数字营销专家，精通全媒体整合营销，曾操盘多个千万级营销项目</p>
+                        </div>
+                    </div>
+
+                    <div class="text-center mt-12">
+                        <button onclick="showPage('team')" class="border-2 border-fuchsia-400 text-fuchsia-400 hover:bg-fuchsia-400 hover:text-white bg-transparent transition-all duration-300 px-8 py-3 rounded-md">
+                            了解更多团队
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 底部联系区域 -->
+            <footer class="bg-gray-950 text-gray-300 py-20 border-t border-gray-800/50 relative overflow-hidden">
+                <div class="absolute inset-0 opacity-5">
+                    <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-violet-500/20 rounded-full blur-3xl"></div>
+                    <div class="absolute bottom-1/4 right-1/4 w-80 h-80 bg-cyan-500/20 rounded-full blur-3xl"></div>
+                </div>
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
+                        <div>
+                            <div class="inline-block px-4 py-2 bg-cyan-500/20 text-cyan-400 rounded-full text-sm mb-6 border border-cyan-500/30">
+                                Contact
+                            </div>
+                            <h2 class="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
+                                与我们一起创造
+                                <br>
+                                <span class="bg-gradient-to-r from-violet-400 via-fuchsia-400 to-cyan-400 bg-clip-text text-transparent">
+                                    卓越品牌体验
+                                </span>
+                            </h2>
+                            <p class="text-lg text-gray-400 mb-8 leading-relaxed">
+                                让我们深入了解您的品牌需求，为您量身定制专业的创意解决方案，共同打造令人印象深刻的品牌故事。
+                            </p>
+                        </div>
+
+                        <div class="flex flex-row items-center justify-center space-x-8">
+                            <div class="text-center">
+                                <div class="w-32 h-32 bg-white rounded-2xl p-3 mb-4 mx-auto shadow-lg flex items-center justify-center text-6xl">
+                                    💬
+                                </div>
+                                <h3 class="text-base font-semibold text-white mb-2">微信咨询</h3>
+                                <p class="text-gray-400 text-xs">扫码添加微信，获取专业咨询</p>
+                            </div>
+
+                            <div class="text-center">
+                                <div class="w-32 h-32 bg-white rounded-2xl p-3 mb-4 mx-auto shadow-lg flex items-center justify-center text-6xl">
+                                    🏢
+                                </div>
+                                <h3 class="text-base font-semibold text-white mb-2">企业微信</h3>
+                                <p class="text-gray-400 text-xs">扫码联系企业微信，快速响应</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="border-t border-gray-800/50 mb-12"></div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+                        <div>
+                            <h3 class="text-lg font-semibold mb-6 text-white">服务项目</h3>
+                            <ul class="space-y-3 text-gray-400">
+                                <li><a href="#" onclick="showPage('services')" class="hover:text-white transition-colors">品牌策略</a></li>
+                                <li><a href="#" onclick="showPage('services')" class="hover:text-white transition-colors">视觉设计</a></li>
+                                <li><a href="#" onclick="showPage('services')" class="hover:text-white transition-colors">数字营销</a></li>
+                                <li><a href="#" onclick="showPage('services')" class="hover:text-white transition-colors">活动策划</a></li>
+                                <li><a href="#" onclick="showPage('services')" class="hover:text-white transition-colors">内容营销</a></li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <h3 class="text-lg font-semibold mb-6 text-white">解决方案</h3>
+                            <ul class="space-y-3 text-gray-400">
+                                <li><a href="#" class="hover:text-white transition-colors">品牌重塑</a></li>
+                                <li><a href="#" class="hover:text-white transition-colors">数字化转型</a></li>
+                                <li><a href="#" class="hover:text-white transition-colors">营销自动化</a></li>
+                                <li><a href="#" class="hover:text-white transition-colors">用户体验优化</a></li>
+                                <li><a href="#" class="hover:text-white transition-colors">数据分析</a></li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <h3 class="text-lg font-semibold mb-6 text-white">公司信息</h3>
+                            <ul class="space-y-3 text-gray-400">
+                                <li><a href="#" onclick="showPage('about')" class="hover:text-white transition-colors">关于我们</a></li>
+                                <li><a href="#" onclick="showPage('team')" class="hover:text-white transition-colors">团队介绍</a></li>
+                                <li><a href="#" class="hover:text-white transition-colors">合作伙伴</a></li>
+                                <li><a href="#" class="hover:text-white transition-colors">隐私政策</a></li>
+                                <li><a href="#" class="hover:text-white transition-colors">服务条款</a></li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <h3 class="text-lg font-semibold mb-6 text-white">联系方式</h3>
+                            <div class="space-y-4 text-gray-400">
+                                <p class="leading-relaxed">我们期待与您合作，共同创造令人惊艳的品牌体验。</p>
+                                <div class="space-y-2">
+                                    <p>📞 400-888-9999</p>
+                                    <p>✉️ info@company.com</p>
+                                    <p>📍 北京市朝阳区创意园区</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-col md:flex-row justify-between items-center pt-8 border-t border-gray-800/50">
+                        <div class="flex items-center mb-4 md:mb-0">
+                            <div class="text-2xl font-bold font-serif bg-gradient-to-r from-violet-400 via-fuchsia-400 to-cyan-400 bg-clip-text text-transparent">
+                                创意传媒
+                            </div>
+                        </div>
+                        <div class="text-gray-500 text-sm">Copyright © 2024 创意传媒, All rights reserved.</div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+
+    <!-- 核心服务页面 -->
+    <div id="services" class="page">
+        <div class="min-h-screen bg-gray-950 pt-16">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+                <div class="text-center mb-16">
+                    <h1 class="text-4xl md:text-5xl font-bold text-white mb-6 font-serif">核心服务</h1>
+                    <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+                        我们提供全方位的品牌服务，从策略规划到创意执行，助力您的品牌在竞争激烈的市场中脱颖而出
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="bg-gray-900/50 border border-gray-800/50 rounded-xl p-8 hover:shadow-xl transition-all duration-300">
+                        <div class="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center mb-6">
+                            <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M9 12l2 2 4-4m6 2a9 9 0 11-16 0 9 9 0 0116 0z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mb-4">品牌策略</h3>
+                        <p class="text-gray-300 mb-6">深度市场调研，精准品牌定位，制定全面的品牌发展战略，为您的品牌奠定坚实基础。</p>
+                        <ul class="text-gray-400 space-y-2">
+                            <li>• 市场分析与竞品研究</li>
+                            <li>• 品牌定位与价值主张</li>
+                            <li>• 品牌架构与命名策略</li>
+                            <li>• 品牌传播策略规划</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-gray-900/50 border border-gray-800/50 rounded-xl p-8 hover:shadow-xl transition-all duration-300">
+                        <div class="w-16 h-16 bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl flex items-center justify-center mb-6">
+                            <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mb-4">视觉设计</h3>
+                        <p class="text-gray-300 mb-6">创造独特的视觉识别系统，打造令人印象深刻的品牌形象，提升品牌认知度和美誉度。</p>
+                        <ul class="text-gray-400 space-y-2">
+                            <li>• Logo设计与品牌标识</li>
+                            <li>• 视觉识别系统(VIS)</li>
+                            <li>• 包装设计与物料设计</li>
+                            <li>• 网站与数字界面设计</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-gray-900/50 border border-gray-800/50 rounded-xl p-8 hover:shadow-xl transition-all duration-300">
+                        <div class="w-16 h-16 bg-gradient-to-br from-cyan-500 to-cyan-600 rounded-xl flex items-center justify-center mb-6">
+                            <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mb-4">数字营销</h3>
+                        <p class="text-gray-300 mb-6">整合多渠道数字营销资源，精准触达目标用户，提升品牌曝光度和转化率。</p>
+                        <ul class="text-gray-400 space-y-2">
+                            <li>• 社交媒体营销策略</li>
+                            <li>• 搜索引擎优化(SEO)</li>
+                            <li>• 付费广告投放管理</li>
+                            <li>• 数据分析与效果优化</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-gray-900/50 border border-gray-800/50 rounded-xl p-8 hover:shadow-xl transition-all duration-300">
+                        <div class="w-16 h-16 bg-gradient-to-br from-pink-500 to-pink-600 rounded-xl flex items-center justify-center mb-6">
+                            <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mb-4">活动策划</h3>
+                        <p class="text-gray-300 mb-6">创意活动策划与执行，打造难忘的品牌体验，增强用户粘性和品牌忠诚度。</p>
+                        <ul class="text-gray-400 space-y-2">
+                            <li>• 品牌发布会策划</li>
+                            <li>• 主题营销活动设计</li>
+                            <li>• 展会展览策划执行</li>
+                            <li>• 线上线下活动整合</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-gray-900/50 border border-gray-800/50 rounded-xl p-8 hover:shadow-xl transition-all duration-300">
+                        <div class="w-16 h-16 bg-gradient-to-br from-teal-500 to-teal-600 rounded-xl flex items-center justify-center mb-6">
+                            <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                <path fillRule="evenodd" d="M4 4a2 2 0 012-2h4.586A2 2 0 0112 2.586L15.414 6A2 2 0 0116 7.414V16a2 2 0 01-2 2H6a2 2 0 01-2-2V4zm2 6a1 1 0 011-1h6a1 1 0 110 2H7a1 1 0 01-1-1zm1 3a1 1 0 100 2h6a1 1 0 100-2H7z" clipRule="evenodd"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mb-4">内容营销</h3>
+                        <p class="text-gray-300 mb-6">优质内容创作与传播，建立品牌权威性，提升用户参与度和品牌影响力。</p>
+                        <ul class="text-gray-400 space-y-2">
+                            <li>• 品牌故事与内容策略</li>
+                            <li>• 图文视频内容制作</li>
+                            <li>• 自媒体平台运营</li>
+                            <li>• KOL合作与传播</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-gray-900/50 border border-gray-800/50 rounded-xl p-8 hover:shadow-xl transition-all duration-300">
+                        <div class="w-16 h-16 bg-gradient-to-br from-rose-500 to-rose-600 rounded-xl flex items-center justify-center mb-6">
+                            <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                <path fillRule="evenodd" d="M18 13V5a2 2 0 00-2-2H4a2 2 0 00-2 2v8a2 2 0 002 2h3l3 3 3-3h3a2 2 0 002-2zM5 7a1 1 0 011-1h8a1 1 0 110 2H6a1 1 0 01-1-1zm1 3a1 1 0 100 2h6a1 1 0 100-2H6z" clipRule="evenodd"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mb-4">社交媒体</h3>
+                        <p class="text-gray-300 mb-6">全平台社交媒体运营，建立品牌社群，增强用户互动和品牌传播效果。</p>
+                        <ul class="text-gray-400 space-y-2">
+                            <li>• 微信微博运营策略</li>
+                            <li>• 抖音快手内容制作</li>
+                            <li>• 小红书种草营销</li>
+                            <li>• 社群运营与维护</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-gray-900/50 border border-gray-800/50 rounded-xl p-8 hover:shadow-xl transition-all duration-300">
+                        <div class="w-16 h-16 bg-gradient-to-br from-indigo-500 to-indigo-600 rounded-xl flex items-center justify-center mb-6">
+                            <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M2 6a2 2 0 012-2h6a2 2 0 012 2v8a2 2 0 002 2H4a2 2 0 00-2-2V6zM14.553 7.106A1 1 0 0014 8v4a1 1 0 00.553.894l2 1A1 1 0 0018 13V7a1 1 0 00-1.447-.894l-2 1z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mb-4">影视制作</h3>
+                        <p class="text-gray-300 mb-6">专业影视内容制作，打造高质量的品牌宣传片和营销视频，提升品牌形象。</p>
+                        <ul class="text-gray-400 space-y-2">
+                            <li>• 品牌宣传片制作</li>
+                            <li>• 产品展示视频</li>
+                            <li>• 企业形象片拍摄</li>
+                            <li>• 短视频内容创作</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-gray-900/50 border border-gray-800/50 rounded-xl p-8 hover:shadow-xl transition-all duration-300">
+                        <div class="w-16 h-16 bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl flex items-center justify-center mb-6">
+                            <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clipRule="evenodd"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mb-4">公关传播</h3>
+                        <p class="text-gray-300 mb-6">专业公关策略制定与执行，维护品牌声誉，提升品牌知名度和美誉度。</p>
+                        <ul class="text-gray-400 space-y-2">
+                            <li>• 媒体关系维护</li>
+                            <li>• 危机公关处理</li>
+                            <li>• 新闻稿撰写发布</li>
+                            <li>• 行业活动参与</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="text-center mt-16">
+                    <button onclick="showPage('contact')" class="border-2 border-fuchsia-400 text-fuchsia-400 hover:bg-fuchsia-400 hover:text-white bg-transparent transition-all duration-300 px-8 py-4 text-lg rounded-md">
+                        立即咨询服务
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 精选案例页面 -->
+    <div id="cases" class="page">
+        <div class="min-h-screen bg-gray-950 pt-16">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+                <div class="text-center mb-16">
+                    <h1 class="text-4xl md:text-5xl font-bold text-white mb-6 font-serif">精选案例</h1>
+                    <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+                        每一个成功案例都是我们专业实力的体现，见证品牌从策略到执行的完美蜕变
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="group overflow-hidden hover:shadow-xl transition-all duration-300 relative cursor-pointer rounded-lg" onclick="showCaseDetail('fashion-brand')">
+                        <div class="h-64 bg-gradient-to-br from-blue-600 to-purple-600 flex items-center justify-center">
+                            <div class="text-center text-white">
+                                <div class="text-6xl mb-4">👗</div>
+                                <h3 class="text-xl font-semibold mb-2">高端时尚品牌全案设计</h3>
+                                <div class="bg-blue-500/90 text-white px-3 py-1 rounded-full text-sm inline-block">时尚品牌</div>
+                            </div>
+                        </div>
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
+                            <div class="p-6 text-white">
+                                <p class="text-sm opacity-90">为知名时尚品牌打造完整的品牌形象体系，提升品牌价值认知</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="group overflow-hidden hover:shadow-xl transition-all duration-300 relative cursor-pointer rounded-lg" onclick="showCaseDetail('tech-startup')">
+                        <div class="h-64 bg-gradient-to-br from-purple-600 to-pink-600 flex items-center justify-center">
+                            <div class="text-center text-white">
+                                <div class="text-6xl mb-4">💻</div>
+                                <h3 class="text-xl font-semibold mb-2">科技创新企业品牌升级</h3>
+                                <div class="bg-purple-500/90 text-white px-3 py-1 rounded-full text-sm inline-block">科技创新</div>
+                            </div>
+                        </div>
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
+                            <div class="p-6 text-white">
+                                <p class="text-sm opacity-90">助力科技企业完成品牌升级，提升市场竞争力</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="group overflow-hidden hover:shadow-xl transition-all duration-300 relative cursor-pointer rounded-lg" onclick="showCaseDetail('restaurant-brand')">
+                        <div class="h-64 bg-gradient-to-br from-green-600 to-teal-600 flex items-center justify-center">
+                            <div class="text-center text-white">
+                                <div class="text-6xl mb-4">🍽️</div>
+                                <h3 class="text-xl font-semibold mb-2">高端餐饮品牌策划</h3>
+                                <div class="bg-green-500/90 text-white px-3 py-1 rounded-full text-sm inline-block">餐饮服务</div>
+                            </div>
+                        </div>
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
+                            <div class="p-6 text-white">
+                                <p class="text-sm opacity-90">为高端餐饮品牌打造独特的品牌体验</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="group overflow-hidden hover:shadow-xl transition-all duration-300 relative cursor-pointer rounded-lg" onclick="showCaseDetail('education-platform')">
+                        <div class="h-64 bg-gradient-to-br from-yellow-600 to-orange-600 flex items-center justify-center">
+                            <div class="text-center text-white">
+                                <div class="text-6xl mb-4">📚</div>
+                                <h3 class="text-xl font-semibold mb-2">在线教育平台设计</h3>
+                                <div class="bg-yellow-500/90 text-white px-3 py-1 rounded-full text-sm inline-block">教育培训</div>
+                            </div>
+                        </div>
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
+                            <div class="p-6 text-white">
+                                <p class="text-sm opacity-90">为在线教育平台提供全方位品牌设计服务</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="group overflow-hidden hover:shadow-xl transition-all duration-300 relative cursor-pointer rounded-lg" onclick="showCaseDetail('fintech-rebrand')">
+                        <div class="h-64 bg-gradient-to-br from-indigo-600 to-blue-600 flex items-center justify-center">
+                            <div class="text-center text-white">
+                                <div class="text-6xl mb-4">💰</div>
+                                <h3 class="text-xl font-semibold mb-2">金融科技品牌重塑</h3>
+                                <div class="bg-indigo-500/90 text-white px-3 py-1 rounded-full text-sm inline-block">金融服务</div>
+                            </div>
+                        </div>
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
+                            <div class="p-6 text-white">
+                                <p class="text-sm opacity-90">助力金融科技公司完成品牌重塑，提升用户信任度</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="group overflow-hidden hover:shadow-xl transition-all duration-300 relative cursor-pointer rounded-lg" onclick="showCaseDetail('ecommerce-visual')">
+                        <div class="h-64 bg-gradient-to-br from-red-600 to-pink-600 flex items-center justify-center">
+                            <div class="text-center text-white">
+                                <div class="text-6xl mb-4">🛒</div>
+                                <h3 class="text-xl font-semibold mb-2">电商平台品牌视觉系统</h3>
+                                <div class="bg-red-500/90 text-white px-3 py-1 rounded-full text-sm inline-block">电商平台</div>
+                            </div>
+                        </div>
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
+                            <div class="p-6 text-white">
+                                <p class="text-sm opacity-90">为大型电商平台打造统一的品牌视觉识别系统</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="text-center mt-16">
+                    <button onclick="showPage('contact')" class="border-2 border-fuchsia-400 text-fuchsia-400 hover:bg-fuchsia-400 hover:text-white bg-transparent transition-all duration-300 px-8 py-4 text-lg rounded-md">
+                        了解更多案例
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 案例详情模态框 -->
+    <div id="caseModal" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 hidden">
+        <div class="flex items-center justify-center min-h-screen p-4">
+            <div class="bg-gray-900 rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto">
+                <div class="p-8">
+                    <div class="flex justify-between items-start mb-6">
+                        <div>
+                            <h2 id="caseTitle" class="text-3xl font-bold text-white mb-2"></h2>
+                            <div id="caseBadge" class="inline-block px-3 py-1 rounded-full text-sm"></div>
+                        </div>
+                        <button onclick="closeCaseModal()" class="text-gray-400 hover:text-white text-2xl">×</button>
+                    </div>
+                    
+                    <div id="caseImage" class="w-full h-64 rounded-lg mb-6 flex items-center justify-center text-6xl"></div>
+                    
+                    <div id="caseDescription" class="text-gray-300 mb-8"></div>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div>
+                            <h3 class="text-xl font-semibold text-white mb-4">项目挑战</h3>
+                            <div id="caseChallenges" class="text-gray-300"></div>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold text-white mb-4">解决方案</h3>
+                            <div id="caseSolutions" class="text-gray-300"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-8">
+                        <h3 class="text-xl font-semibold text-white mb-4">项目成果</h3>
+                        <div id="caseResults" class="text-gray-300"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 专业团队页面 -->
+    <div id="team" class="page">
+        <div class="min-h-screen bg-gray-950 pt-16">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+                <div class="text-center mb-16">
+                    <h1 class="text-4xl md:text-5xl font-bold text-white mb-6 font-serif">专业团队</h1>
+                    <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+                        汇聚行业顶尖人才，用专业和创意为品牌赋能，每一位团队成员都是品牌成功的关键
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+                    <div class="text-center group hover:shadow-lg transition-all duration-300 bg-gray-900/30 border border-gray-800/50 rounded-lg p-8">
+                        <div class="w-32 h-32 bg-gradient-to-br from-cyan-400 to-cyan-600 rounded-full mx-auto mb-6 flex items-center justify-center text-6xl">
+                            👨‍💼
+                        </div>
+                        <h3 class="text-2xl font-semibold text-white mb-2">张明华</h3>
+                        <div class="mb-4 bg-cyan-500/20 text-cyan-300 border border-cyan-500/30 px-4 py-2 rounded-full text-sm inline-block">创意总监</div>
+                        <p class="text-gray-400 mb-6">15年品牌策划经验，曾服务过多家知名企业，擅长品牌战略规划和创意执行。毕业于中央美术学院，拥有丰富的国际4A广告公司工作经验。</p>
+                        <div class="text-left">
+                            <h4 class="text-white font-semibold mb-2">专业领域：</h4>
+                            <ul class="text-gray-400 text-sm space-y-1">
+                                <li>• 品牌战略规划</li>
+                                <li>• 创意概念开发</li>
+                                <li>• 整合营销传播</li>
+                                <li>• 团队管理</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="text-center group hover:shadow-lg transition-all duration-300 bg-gray-900/30 border border-gray-800/50 rounded-lg p-8">
+                        <div class="w-32 h-32 bg-gradient-to-br from-violet-400 to-violet-600 rounded-full mx-auto mb-6 flex items-center justify-center text-6xl">
+                            👩‍🎨
+                        </div>
+                        <h3 class="text-2xl font-semibold text-white mb-2">李雅静</h3>
+                        <div class="mb-4 bg-violet-500/20 text-violet-300 border border-violet-500/30 px-4 py-2 rounded-full text-sm inline-block">设计总监</div>
+                        <p class="text-gray-400 mb-6">国际4A广告公司出身，在视觉传达和品牌设计领域有着丰富的实战经验。曾获得多项国际设计大奖，作品风格独特且具有强烈的视觉冲击力。</p>
+                        <div class="text-left">
+                            <h4 class="text-white font-semibold mb-2">专业领域：</h4>
+                            <ul class="text-gray-400 text-sm space-y-1">
+                                <li>• 品牌视觉识别</li>
+                                <li>• 包装设计</li>
+                                <li>• 数字界面设计</li>
+                                <li>• 创意指导</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="text-center group hover:shadow-lg transition-all duration-300 bg-gray-900/30 border border-gray-800/50 rounded-lg p-8">
+                        <div class="w-32 h-32 bg-gradient-to-br from-fuchsia-400 to-fuchsia-600 rounded-full mx-auto mb-6 flex items-center justify-center text-6xl">
+                            👨‍💻
+                        </div>
+                        <h3 class="text-2xl font-semibold text-white mb-2">王志远</h3>
+                        <div class="mb-4 bg-fuchsia-500/20 text-fuchsia-300 border border-fuchsia-500/30 px-4 py-2 rounded-full text-sm inline-block">营销总监</div>
+                        <p class="text-gray-400 mb-6">数字营销专家，精通全媒体整合营销，曾操盘多个千万级营销项目。在社交媒体营销、内容营销和数据分析方面有着深厚的专业功底。</p>
+                        <div class="text-left">
+                            <h4 class="text-white font-semibold mb-2">专业领域：</h4>
+                            <ul class="text-gray-400 text-sm space-y-1">
+                                <li>• 数字营销策略</li>
+                                <li>• 社交媒体运营</li>
+                                <li>• 数据分析优化</li>
+                                <li>• 媒体投放管理</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-gray-900/30 border border-gray-800/50 rounded-2xl p-8 mb-16">
+                    <h2 class="text-3xl font-bold text-white mb-8 text-center">团队优势</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                        <div class="text-center">
+                            <div class="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl mx-auto mb-4 flex items-center justify-center">
+                                <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M9 12l2 2 4-4m6 2a9 9 0 11-16 0 9 9 0 0116 0z"/>
+                                </svg>
+                            </div>
+                            <h3 class="text-lg font-semibold text-white mb-2">专业经验</h3>
+                            <p class="text-gray-400 text-sm">平均10+年行业经验，服务过众多知名品牌</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="w-16 h-16 bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl mx-auto mb-4 flex items-center justify-center">
+                                <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3z"/>
+                                </svg>
+                            </div>
+                            <h3 class="text-lg font-semibold text-white mb-2">团队协作</h3>
+                            <p class="text-gray-400 text-sm">跨领域专业团队，高效协作完成项目</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="w-16 h-16 bg-gradient-to-br from-cyan-500 to-cyan-600 rounded-xl mx-auto mb-4 flex items-center justify-center">
+                                <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fillRule="evenodd" d="M11.49 3.17c-.38-1.56-2.6-1.56-2.98 0a1.532 1.532 0 01-2.286.948c-1.372-.836-2.942.734-2.106 2.106.54.886.061 2.042-.947 2.287-1.561.379-1.561 2.6 0 2.978a1.532 1.532 0 01.947 2.287c-.836 1.372.734 2.942 2.106 2.106a1.532 1.532 0 012.287.947c.379 1.561 2.6 1.561 2.978 0a1.533 1.533 0 012.287-.947c1.372.836 2.942-.734 2.106-2.106a1.533 1.533 0 01.947-2.287c1.561-.379 1.561-2.6 0-2.978a1.532 1.532 0 01-.947-2.287c.836-1.372-.734-2.942-2.106-2.106a1.532 1.532 0 01-2.287-.947zM10 13a3 3 0 100-6 3 3 0 000 6z" clipRule="evenodd"/>
+                                </svg>
+                            </div>
+                            <h3 class="text-lg font-semibold text-white mb-2">创新思维</h3>
+                            <p class="text-gray-400 text-sm">持续学习新技术，保持创新思维</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="w-16 h-16 bg-gradient-to-br from-pink-500 to-pink-600 rounded-xl mx-auto mb-4 flex items-center justify-center">
+                                <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fillRule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"/>
+                                </svg>
+                            </div>
+                            <h3 class="text-lg font-semibold text-white mb-2">品质保证</h3>
+                            <p class="text-gray-400 text-sm">严格的质量控制，确保每个项目的高品质交付</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="text-center">
+                    <button onclick="showPage('contact')" class="border-2 border-fuchsia-400 text-fuchsia-400 hover:bg-fuchsia-400 hover:text-white bg-transparent transition-all duration-300 px-8 py-4 text-lg rounded-md">
+                        与我们合作
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 关于我们页面 -->
+    <div id="about" class="page">
+        <div class="min-h-screen bg-gray-950 pt-16">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+                <div class="text-center mb-16">
+                    <h1 class="text-4xl md:text-5xl font-bold text-white mb-6 font-serif">关于我们</h1>
+                    <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+                        边角创意成立于2016年，是一家专注于品牌全案服务的创意传媒公司
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
+                    <div>
+                        <h2 class="text-3xl font-bold text-white mb-6">我们的使命</h2>
+                        <p class="text-gray-300 mb-6 leading-relaxed">
+                            我们致力于为客户提供最专业、最创新的品牌服务，通过深度的市场洞察和创意执行，帮助品牌在竞争激烈的市场中脱颖而出，实现商业价值的最大化。
+                        </p>
+                        <p class="text-gray-300 mb-8 leading-relaxed">
+                            我们相信，每个品牌都有其独特的故事和价值，我们的使命就是用专业的策略和创意的表达，让这些故事被更多人看见、理解和认同。
+                        </p>
+                        
+                        <h3 class="text-2xl font-bold text-white mb-4">核心价值观</h3>
+                        <div class="space-y-4">
+                            <div class="flex items-start">
+                                <div class="w-2 h-2 bg-fuchsia-400 rounded-full mt-2 mr-4 flex-shrink-0"></div>
+                                <div>
+                                    <h4 class="text-white font-semibold mb-1">创新驱动</h4>
+                                    <p class="text-gray-400 text-sm">持续探索新的创意表达方式，为客户提供前沿的解决方案</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="w-2 h-2 bg-cyan-400 rounded-full mt-2 mr-4 flex-shrink-0"></div>
+                                <div>
+                                    <h4 class="text-white font-semibold mb-1">专业至上</h4>
+                                    <p class="text-gray-400 text-sm">以专业的态度和精湛的技艺，确保每个项目的高质量交付</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="w-2 h-2 bg-violet-400 rounded-full mt-2 mr-4 flex-shrink-0"></div>
+                                <div>
+                                    <h4 class="text-white font-semibold mb-1">客户为本</h4>
+                                    <p class="text-gray-400 text-sm">深入理解客户需求，提供量身定制的品牌解决方案</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-gray-900/30 border border-gray-800/50 rounded-2xl p-8">
+                        <h3 class="text-2xl font-bold text-white mb-6">公司发展历程</h3>
+                        <div class="space-y-6">
+                            <div class="flex">
+                                <div class="w-20 text-fuchsia-400 font-bold text-lg flex-shrink-0">2016</div>
+                                <div>
+                                    <h4 class="text-white font-semibold mb-1">公司成立</h4>
+                                    <p class="text-gray-400 text-sm">边角创意正式成立，专注品牌策略与视觉设计</p>
+                                </div>
+                            </div>
+                            <div class="flex">
+                                <div class="w-20 text-cyan-400 font-bold text-lg flex-shrink-0">2018</div>
+                                <div>
+                                    <h4 class="text-white font-semibold mb-1">业务拓展</h4>
+                                    <p class="text-gray-400 text-sm">增加数字营销和内容创作服务，形成全案服务体系</p>
+                                </div>
+                            </div>
+                            <div class="flex">
+                                <div class="w-20 text-violet-400 font-bold text-lg flex-shrink-0">2020</div>
+                                <div>
+                                    <h4 class="text-white font-semibold mb-1">团队扩张</h4>
+                                    <p class="text-gray-400 text-sm">团队规模扩大至30+人，服务客户超过100家</p>
+                                </div>
+                            </div>
+                            <div class="flex">
+                                <div class="w-20 text-orange-400 font-bold text-lg flex-shrink-0">2022</div>
+                                <div>
+                                    <h4 class="text-white font-semibold mb-1">行业认可</h4>
+                                    <p class="text-gray-400 text-sm">获得多项行业大奖，成为区域知名品牌服务商</p>
+                                </div>
+                            </div>
+                            <div class="flex">
+                                <div class="w-20 text-green-400 font-bold text-lg flex-shrink-0">2024</div>
+                                <div>
+                                    <h4 class="text-white font-semibold mb-1">持续创新</h4>
+                                    <p class="text-gray-400 text-sm">引入AI技术，提升服务效率和创意质量</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-gray-900/30 border border-gray-800/50 rounded-2xl p-8 mb-16">
+                    <h2 class="text-3xl font-bold text-white mb-8 text-center">我们的成就</h2>
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                        <div>
+                            <div class="text-4xl font-bold text-cyan-400 mb-2">200+</div>
+                            <div class="text-gray-300">成功案例</div>
+                        </div>
+                        <div>
+                            <div class="text-4xl font-bold text-violet-400 mb-2">50+</div>
+                            <div class="text-gray-300">合作伙伴</div>
+                        </div>
+                        <div>
+                            <div class="text-4xl font-bold text-fuchsia-400 mb-2">8年</div>
+                            <div class="text-gray-300">行业经验</div>
+                        </div>
+                        <div>
+                            <div class="text-4xl font-bold text-orange-400 mb-2">98%</div>
+                            <div class="text-gray-300">客户满意度</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="text-center">
+                    <button onclick="showPage('contact')" class="border-2 border-fuchsia-400 text-fuchsia-400 hover:bg-fuchsia-400 hover:text-white bg-transparent transition-all duration-300 px-8 py-4 text-lg rounded-md mr-4">
+                        联系我们
+                    </button>
+                    <button onclick="showPage('cases')" class="border-2 border-violet-400 text-violet-400 hover:bg-violet-400 hover:text-white bg-transparent transition-all duration-300 px-8 py-4 text-lg rounded-md">
+                        查看案例
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 联系我们页面 -->
+    <div id="contact" class="page">
+        <div class="min-h-screen bg-gray-950 pt-16">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+                <div class="text-center mb-16">
+                    <h1 class="text-4xl md:text-5xl font-bold text-white mb-6 font-serif">联系我们</h1>
+                    <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+                        让我们深入了解您的品牌需求，为您量身定制专业的创意解决方案
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                    <div>
+                        <h2 class="text-3xl font-bold text-white mb-8">与我们一起创造卓越品牌体验</h2>
+                        
+                        <div class="space-y-6 mb-8">
+                            <div class="flex items-start">
+                                <div class="w-12 h-12 bg-fuchsia-500/20 rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
+                                    <svg class="w-6 h-6 text-fuchsia-400" fill="currentColor" viewBox="0 0 20 20">
+                                        <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h3 class="text-white font-semibold mb-1">电话咨询</h3>
+                                    <p class="text-gray-400">400-888-9999</p>
+                                    <p class="text-gray-500 text-sm">工作日 9:00-18:00</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start">
+                                <div class="w-12 h-12 bg-cyan-500/20 rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
+                                    <svg class="w-6 h-6 text-cyan-400" fill="currentColor" viewBox="0 0 20 20">
+                                        <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/>
+                                        <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h3 class="text-white font-semibold mb-1">邮箱联系</h3>
+                                    <p class="text-gray-400">info@company.com</p>
+                                    <p class="text-gray-500 text-sm">24小时内回复</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start">
+                                <div class="w-12 h-12 bg-violet-500/20 rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
+                                    <svg class="w-6 h-6 text-violet-400" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd"/>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h3 class="text-white font-semibold mb-1">公司地址</h3>
+                                    <p class="text-gray-400">北京市朝阳区创意园区</p>
+                                    <p class="text-gray-500 text-sm">欢迎预约参观</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-gray-900/30 border border-gray-800/50 rounded-2xl p-6">
+                            <h3 class="text-xl font-bold text-white mb-4">服务流程</h3>
+                            <div class="space-y-3">
+                                <div class="flex items-center">
+                                    <div class="w-8 h-8 bg-fuchsia-500 rounded-full flex items-center justify-center text-white text-sm font-bold mr-3">1</div>
+                                    <span class="text-gray-300">需求沟通与分析</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <div class="w-8 h-8 bg-cyan-500 rounded-full flex items-center justify-center text-white text-sm font-bold mr-3">2</div>
+                                    <span class="text-gray-300">方案制定与报价</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <div class="w-8 h-8 bg-violet-500 rounded-full flex items-center justify-center text-white text-sm font-bold mr-3">3</div>
+                                    <span class="text-gray-300">项目执行与跟进</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <div class="w-8 h-8 bg-orange-500 rounded-full flex items-center justify-center text-white text-sm font-bold mr-3">4</div>
+                                    <span class="text-gray-300">成果交付与优化</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-col items-center justify-center space-y-8">
+                        <div class="text-center">
+                            <div class="w-48 h-48 bg-white rounded-2xl p-6 mb-6 mx-auto shadow-lg flex items-center justify-center text-8xl">
+                                💬
+                            </div>
+                            <h3 class="text-2xl font-semibold text-white mb-4">微信咨询</h3>
+                            <p class="text-gray-400 mb-4">扫码添加微信，获取专业咨询</p>
+                            <p class="text-gray-500 text-sm">工作日快速响应</p>
+                        </div>
+
+                        <div class="text-center">
+                            <div class="w-48 h-48 bg-white rounded-2xl p-6 mb-6 mx-auto shadow-lg flex items-center justify-center text-8xl">
+                                🏢
+                            </div>
+                            <h3 class="text-2xl font-semibold text-white mb-4">企业微信</h3>
+                            <p class="text-gray-400 mb-4">扫码联系企业微信，快速响应</p>
+                            <p class="text-gray-500 text-sm">专业团队服务</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="text-center mt-16">
+                    <div class="bg-gray-900/30 border border-gray-800/50 rounded-2xl p-8 max-w-4xl mx-auto">
+                        <h3 class="text-2xl font-bold text-white mb-4">为什么选择我们？</h3>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                            <div class="text-center">
+                                <div class="w-16 h-16 bg-gradient-to-br from-fuchsia-500 to-fuchsia-600 rounded-xl mx-auto mb-4 flex items-center justify-center">
+                                    <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fillRule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"/>
+                                    </svg>
+                                </div>
+                                <h4 class="text-white font-semibold mb-2">专业团队</h4>
+                                <p class="text-gray-400 text-sm">8年行业经验，专业团队保障</p>
+                            </div>
+                            <div class="text-center">
+                                <div class="w-16 h-16 bg-gradient-to-br from-cyan-500 to-cyan-600 rounded-xl mx-auto mb-4 flex items-center justify-center">
+                                    <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                        <path d="M9 12l2 2 4-4m6 2a9 9 0 11-16 0 9 9 0 0116 0z"/>
+                                    </svg>
+                                </div>
+                                <h4 class="text-white font-semibold mb-2">品质保证</h4>
+                                <p class="text-gray-400 text-sm">200+成功案例，98%客户满意度</p>
+                            </div>
+                            <div class="text-center">
+                                <div class="w-16 h-16 bg-gradient-to-br from-violet-500 to-violet-600 rounded-xl mx-auto mb-4 flex items-center justify-center">
+                                    <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fillRule="evenodd" d="M11.49 3.17c-.38-1.56-2.6-1.56-2.98 0a1.532 1.532 0 01-2.286.948c-1.372-.836-2.942.734-2.106 2.106.54.886.061 2.042-.947 2.287-1.561.379-1.561 2.6 0 2.978a1.532 1.532 0 01.947 2.287c-.836 1.372.734 2.942 2.106 2.106a1.532 1.532 0 012.287.947c.379 1.561 2.6 1.561 2.978 0a1.533 1.533 0 012.287-.947c1.372.836 2.942-.734 2.106-2.106a1.533 1.533 0 01.947-2.287c1.561-.379 1.561-2.6 0-2.978a1.532 1.532 0 01-.947-2.287c.836-1.372-.734-2.942-2.106-2.106a1.532 1.532 0 01-2.287-.947zM10 13a3 3 0 100-6 3 3 0 000 6z" clipRule="evenodd"/>
+                                    </svg>
+                                </div>
+                                <h4 class="text-white font-semibold mb-2">全案服务</h4>
+                                <p class="text-gray-400 text-sm">从策略到执行，一站式解决方案</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // 页面切换功能
+        function showPage(pageId) {
+            // 隐藏所有页面
+            const pages = document.querySelectorAll('.page');
+            pages.forEach(page => {
+                page.classList.remove('active');
+            });
+            
+            // 显示目标页面
+            const targetPage = document.getElementById(pageId);
+            if (targetPage) {
+                targetPage.classList.add('active');
+                // 滚动到顶部
+                window.scrollTo(0, 0);
+            }
+        }
+
+        // 案例详情数据
+        const caseData = {
+            'fashion-brand': {
+                title: '高端时尚品牌全案设计',
+                badge: '时尚品牌',
+                badgeClass: 'bg-blue-500/90 text-white',
+                image: '👗',
+                description: '为知名时尚品牌打造完整的品牌形象体系，从品牌定位到视觉识别，从线上传播到线下体验，全方位提升品牌价值认知和市场竞争力。',
+                challenges: [
+                    '• 市场竞争激烈，需要差异化定位',
+                    '• 目标用户群体多样化',
+                    '• 线上线下体验需要统一',
+                    '• 品牌传播需要国际化视野'
+                ],
+                solutions: [
+                    '• 深度市场调研，精准品牌定位',
+                    '• 创建独特的视觉识别系统',
+                    '• 整合线上线下传播渠道',
+                    '• 制定国际化品牌传播策略'
+                ],
+                results: [
+                    '• 品牌知名度提升300%',
+                    '• 销售额增长150%',
+                    '• 获得多项设计大奖',
+                    '• 成功进入国际市场'
+                ]
+            },
+            'tech-startup': {
+                title: '科技创新企业品牌升级',
+                badge: '科技创新',
+                badgeClass: 'bg-purple-500/90 text-white',
+                image: '💻',
+                description: '助力科技创新企业完成品牌升级，通过现代化的品牌形象和数字化传播策略，提升企业在行业中的影响力和市场竞争力。',
+                challenges: [
+                    '• 技术导向，品牌意识薄弱',
+                    '• 目标客户理解成本高',
+                    '• 行业竞争激烈',
+                    '• 需要建立专业权威形象'
+                ],
+                solutions: [
+                    '• 简化技术概念，易于理解',
+                    '• 打造专业权威的品牌形象',
+                    '• 制定精准的数字营销策略',
+                    '• 建立行业思想领导地位'
+                ],
+                results: [
+                    '• 品牌认知度提升200%',
+                    '• 客户转化率提升80%',
+                    '• 获得行业权威认可',
+                    '• 成功完成B轮融资'
+                ]
+            },
+            'restaurant-brand': {
+                title: '高端餐饮品牌策划',
+                badge: '餐饮服务',
+                badgeClass: 'bg-green-500/90 text-white',
+                image: '🍽️',
+                description: '为高端餐饮品牌打造独特的品牌体验，从空间设计到服务流程，从菜品包装到营销传播，全方位塑造品牌价值。',
+                challenges: [
+                    '• 餐饮市场同质化严重',
+                    '• 消费者体验要求高',
+                    '• 需要差异化竞争优势',
+                    '• 品牌文化内涵不足'
+                ],
+                solutions: [
+                    '• 挖掘品牌文化内涵',
+                    '• 设计独特的用餐体验',
+                    '• 打造视觉识别系统',
+                    '• 制定精准营销策略'
+                ],
+                results: [
+                    '• 客流量提升120%',
+                    '• 客单价提升60%',
+                    '• 获得美食评论家好评',
+                    '• 成功开设连锁店'
+                ]
+            },
+            'education-platform': {
+                title: '在线教育平台设计',
+                badge: '教育培训',
+                badgeClass: 'bg-yellow-500/90 text-white',
+                image: '📚',
+                description: '为在线教育平台提供全方位品牌设计服务，打造专业、可信赖的教育品牌形象，提升用户学习体验和平台竞争力。',
+                challenges: [
+                    '• 在线教育竞争激烈',
+                    '• 用户信任度建立困难',
+                    '• 学习体验需要优化',
+                    '• 品牌差异化不明显'
+                ],
+                solutions: [
+                    '• 建立专业权威的品牌形象',
+                    '• 优化用户学习体验设计',
+                    '• 制定内容营销策略',
+                    '• 建立用户社区生态'
+                ],
+                results: [
+                    '• 用户注册量增长250%',
+                    '• 课程完成率提升40%',
+                    '• 用户满意度达95%',
+                    '• 获得教育行业大奖'
+                ]
+            },
+            'fintech-rebrand': {
+                title: '金融科技品牌重塑',
+                badge: '金融服务',
+                badgeClass: 'bg-indigo-500/90 text-white',
+                image: '💰',
+                description: '助力金融科技公司完成品牌重塑，通过专业的品牌策略和现代化的视觉设计，提升用户信任度和市场影响力。',
+                challenges: [
+                    '• 金融行业监管严格',
+                    '• 用户对安全性要求高',
+                    '• 需要建立专业可信形象',
+                    '• 技术概念理解门槛高'
+                ],
+                solutions: [
+                    '• 强调安全性和专业性',
+                    '• 简化复杂的金融概念',
+                    '• 建立权威的品牌形象',
+                    '• 制定合规的营销策略'
+                ],
+                results: [
+                    '• 用户信任度提升180%',
+                    '• 交易量增长300%',
+                    '• 获得金融监管认可',
+                    '• 成功上市'
+                ]
+            },
+            'ecommerce-visual': {
+                title: '电商平台品牌视觉系统',
+                badge: '电商平台',
+                badgeClass: 'bg-red-500/90 text-white',
+                image: '🛒',
+                description: '为大型电商平台打造统一的品牌视觉识别系统，提升用户购物体验和品牌认知度，增强平台竞争力。',
+                challenges: [
+                    '• 电商平台同质化严重',
+                    '• 用户体验需要优化',
+                    '• 品牌识别度不高',
+                    '• 多端体验不统一'
+                ],
+                solutions: [
+                    '• 设计统一的视觉识别系统',
+                    '• 优化用户购物体验',
+                    '• 建立品牌差异化优势',
+                    '• 确保多端体验一致性'
+                ],
+                results: [
+                    '• 用户活跃度提升160%',
+                    '• 转化率提升90%',
+                    '• 品牌认知度大幅提升',
+                    '• 获得电商行业大奖'
+                ]
+            }
+        };
+
+        // 显示案例详情
+        function showCaseDetail(caseId) {
+            const data = caseData[caseId];
+            if (!data) return;
+
+            document.getElementById('caseTitle').textContent = data.title;
+            document.getElementById('caseBadge').textContent = data.badge;
+            document.getElementById('caseBadge').className = `inline-block px-3 py-1 rounded-full text-sm ${data.badgeClass}`;
+            document.getElementById('caseImage').textContent = data.image;
+            document.getElementById('caseDescription').textContent = data.description;
+            
+            document.getElementById('caseChallenges').innerHTML = data.challenges.join('<br>');
+            document.getElementById('caseSolutions').innerHTML = data.solutions.join('<br>');
+            document.getElementById('caseResults').innerHTML = data.results.join('<br>');
+
+            document.getElementById('caseModal').classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+
+        // 关闭案例详情
+        function closeCaseModal() {
+            document.getElementById('caseModal').classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }
+
+        // 点击模态框外部关闭
+        document.getElementById('caseModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeCaseModal();
+            }
+        });
+
+        // ESC键关闭模态框
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeCaseModal();
+            }
+        });
+
+        // 移动端菜单切换
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('hidden');
+        }
+
+        // 平滑滚动
+        function smoothScroll(target) {
+            document.querySelector(target).scrollIntoView({
+                behavior: 'smooth'
+            });
+        }
+
+        // 页面加载完成后的初始化
+        document.addEventListener('DOMContentLoaded', function() {
+            // 默认显示首页
+            showPage('home');
+            
+            // 添加页面切换动画
+            const pages = document.querySelectorAll('.page');
+            pages.forEach(page => {
+                page.classList.add('page-transition');
+            });
+            
+            // 监听页面切换
+            const observer = new MutationObserver(function(mutations) {
+                mutations.forEach(function(mutation) {
+                    if (mutation.type === 'attributes' && mutation.attributeName === 'class') {
+                        const target = mutation.target;
+                        if (target.classList.contains('active')) {
+                            setTimeout(() => {
+                                target.classList.add('page-active');
+                            }, 50);
+                        } else {
+                            target.classList.remove('page-active');
+                        }
+                    }
+                });
+            });
+            
+            pages.forEach(page => {
+                observer.observe(page, { attributes: true });
+            });
+        });
+    </script>
+</body>
+</html>
